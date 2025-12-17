@@ -20,6 +20,10 @@
     "fs": {
       "bare": "bare-fs",
       "default": "fs"
+    },
+    "path": {
+      "bare": "bare-path",
+      "default": "path"
     }
   },
   "files": [
@@ -46,6 +50,7 @@
   ],
   "dependencies": {
     "bare-fs": "^4.5.1",
+    "bare-path": "^3.0.0",
     "bare-subprocess": "^5.1.5",
     "require-asset": "^1.1.0"
   },

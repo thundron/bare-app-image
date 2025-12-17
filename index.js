@@ -1,3 +1,5 @@
+const path = require('path')
+const fs = require('./lib/fs')
 const run = require('./lib/run')
 const appimagetool = require('./lib/appimagetool')
 
@@ -21,7 +23,11 @@ exports.createAppImage = async function createAppImage(source, destination, opts
 
   args.push(source)
 
-  if (destination) args.push(destination)
+  if (destination) {
+    await fs.makeDir(path.dirname(destination))
+
+    args.push(destination)
+  }
 
   await run(appimagetool, args)
 }
